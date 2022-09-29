@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout_feedBack"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.FeedBackFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/back_feedBack_button"
+            android:layout_width="12dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4.31dp"
+            android:background="@drawable/back_image"
+            android:contentDescription="@string/todo1"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="56.5dp"
+            android:fontFamily="@font/spartan_semi_bold"
+            android:letterSpacing="-0.03"
+            android:text="@string/feedback1"
+            android:textColor="#3E3C47"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="67dp"
+            android:fontFamily="@font/spartan_regular"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="6sp"
+            android:layout_gravity="center"
+            android:text="@string/let_us_know_your_experience_using_the_app"
+            android:textColor="#3D3D3D"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/userName_textView"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginHorizontal="30dp"
+            android:fontFamily="@font/spartan_regular"
+            android:layout_marginTop="19dp"
+            android:autofillHints="no"
+            android:background="@drawable/rectangle1"
+            android:elevation="5dp"
+            android:hint="@string/your_name"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingStart="13dp"
+            android:textColorHint="#757575"
+            android:textSize="13sp"
+            tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rectangle1"
+            android:elevation="5dp"
+            android:fontFamily="@font/spartan_regular"
+            android:gravity="top"
+            android:padding="9dp"
+            android:hint="@string/we_would_like_to_hear_your_suggestions"
+            android:textColor="#757575"
+            android:textSize="13sp"
+            android:inputType="textMultiLine"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"
+            android:textSize="15sp"
+            android:fontFamily="@font/spartan_medium"
+            android:textColor="#3D3D3D"
+            android:text="@string/your_rating"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="10dp"
+            android:numStars="5"
+            android:progressTint="#FF9A00"
+            android:rating="4"
+            android:stepSize="0.5"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="34.4dp"
+            android:layout_marginHorizontal="30dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/submit_feedback_button"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="52dp"
+                android:fontFamily="@font/spartan_semi_bold"
+                android:letterSpacing="-0.01"
+                android:text="@string/submit"
+                app:cornerRadius="10dp"
+                android:textSize="15sp"
+                android:backgroundTint="#6B36BC"
+                android:textAllCaps="false" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/skip_feedback_button"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="52dp"
+                android:text="@string/skip"
+                android:textColor="#716F6F"
+                android:fontFamily="@font/spartan_semi_bold"
+                android:letterSpacing="-0.01"
+                android:textSize="15sp"
+                app:cornerRadius="10dp"
+                app:backgroundTint="@android:color/transparent"
+                android:textAllCaps="false"
+                app:strokeColor="#716F6F"
+                style="?attr/materialButtonOutlinedStyle" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="-10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/semi_transparent_image_yellow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="340dp"
+                android:layout_marginStart="300dp"
+                android:background="@drawable/semi_tranperant_image_pink"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/professionalCard_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="26dp"
+    android:layout_marginVertical="7.5dp"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="17dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                app:cardCornerRadius="5dp">
+
+                <ImageView
+                    android:id="@+id/imageView_professionalCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image2" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/personName_textView_professionalCard"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/spartan_semi_bold"
+                        android:maxLines="1"
+                        android:text="Josan helo there how"
+                        android:textColor="#E6434343"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#34C759"
+                        app:cardCornerRadius="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="5dp"
+                            android:layout_marginVertical="3dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/rating_textView_professionalCard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/spartan_medium"
+                                android:text="@string/_4_5"
+                                android:autoSizeMinTextSize="9dp"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                tools:ignore="SmallSp" />
+
+                            <ImageView
+                                android:layout_width="9dp"
+                                android:layout_height="9dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/star_image" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <RadioButton
+                    android:id="@+id/radioButton_professionalCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="-6dp"
+                    android:layout_marginTop="5dp"
+                    android:autoSizeMinTextSize="2dp"
+                    android:buttonTint="#FF7030"
+                    android:checked="true"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/spartan_regular"
+                    android:maxLines="1"
+                    android:text="@string/interested_in_service"
+                    android:textColor="#FF7030"
+                    android:textSize="12sp"
+                    tools:ignore="RtlSymmetry,TouchTargetSizeCheck"
+                    tools:targetApi="o" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/location_image" />
+
+                    <TextView
+                        android:id="@+id/distance_textView_professionalCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:fontFamily="@font/spartan_medium"
+                        android:text="@string/_2_5_km"
+                        android:textColor="#696974"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/chat_button_professionalCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:autoSizeMinTextSize="2dp"
+                android:backgroundTint="#A19CE5"
+                android:ellipsize="end"
+                android:paddingHorizontal="0dp"
+                android:fontFamily="@font/spartan_medium"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:maxLines="1"
+                android:text="@string/chat"
+                android:textAllCaps="false"
+                app:cornerRadius="5dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/accept_button_professionalCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:paddingHorizontal="0dp"
+                android:autoSizeMinTextSize="2dp"
+                android:backgroundTint="#A19CE5"
+                android:ellipsize="end"
+                android:fontFamily="@font/spartan_medium"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:maxLines="1"
+                android:text="@string/accept"
+                android:textAllCaps="false"
+                app:cornerRadius="5dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/reject_button_professionalCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:paddingHorizontal="0dp"
+                android:autoSizeMinTextSize="2dp"
+                android:backgroundTint="#A19CE5"
+                android:ellipsize="end"
+                android:fontFamily="@font/spartan_medium"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:maxLines="1"
+                android:text="@string/reject"
+                android:textAllCaps="false"
+                app:cornerRadius="5dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

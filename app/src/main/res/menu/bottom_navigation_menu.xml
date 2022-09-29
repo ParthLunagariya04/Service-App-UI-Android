@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_icon_id"
+        android:icon="@drawable/home_icon"
+        android:enabled="true"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/profile_icon_id"
+        android:icon="@drawable/profile_icon"
+        android:enabled="true"
+        android:title="@string/profile" />
+
+    <item
+        android:id="@+id/contact_icon_id"
+        android:icon="@drawable/phone_call_icon"
+        android:enabled="true"
+        android:title="@string/contact" />
+
+    <item
+        android:id="@+id/feed_back_icon_id"
+        android:icon="@drawable/feed_back_icon"
+        android:enabled="true"
+        android:title="@string/feedback" />
+
+    <item
+        android:id="@+id/order_icon_id"
+        android:icon="@drawable/order_icon"
+        android:enabled="true"
+        android:title="@string/order" />
+</menu>

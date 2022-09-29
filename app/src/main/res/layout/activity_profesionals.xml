@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfesionalsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#33D5ABFF"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:padding="11dp">
+
+                <ImageButton
+                    android:id="@+id/back_professional_button"
+                    android:layout_width="12dp"
+                    android:layout_height="21dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/back_image"
+                    android:contentDescription="@string/todo1"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/rectangle1"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="Search Category...."
+                    android:searchIcon="@drawable/ic_location"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/select_radius_radio_button_professional"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/professioanl_radio_button_selector"
+                    android:button="@color/transparent"
+                    android:checked="true"
+                    android:fontFamily="@font/spartan_semi_bold"
+                    android:gravity="center"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="@string/select_radius"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:cornerRadius="14dp"
+                    app:strokeColor="#E2E2EA"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/select_rating_radio_button_professional"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/professioanl_radio_button_selector"
+                    android:button="@color/transparent"
+                    android:checked="false"
+                    android:fontFamily="@font/spartan_semi_bold"
+                    android:gravity="center"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="@string/select_rating"
+                    android:textAllCaps="false"
+                    app:cornerRadius="14dp"
+                    app:strokeColor="#E2E2EA"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rating_star5_button_professional"
+                    android:layout_width="0dp"
+                    android:layout_height="26dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="0.5"
+                    android:autoSizeMinTextSize="1dp"
+                    android:background="@drawable/professional_rating_radio_button_selecter"
+                    android:button="@color/transparent"
+                    android:checked="true"
+                    android:fontFamily="@font/spartan_semi_bold"
+                    android:gravity="center"
+                    android:onClick="onRatingRadioButtonClicked"
+                    android:paddingHorizontal="5dp"
+                    android:paddingVertical="3dp"
+                    android:text="5.0 ★"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    app:strokeColor="#E2E2EA"
+                    tools:ignore="TouchTargetSizeCheck"
+                    tools:targetApi="o" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rating_star4_button_professional"
+                    android:layout_width="0dp"
+                    android:layout_height="26dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="0.5"
+                    android:autoSizeMinTextSize="1dp"
+                    android:background="@drawable/professional_rating_radio_button_selecter"
+                    android:button="@color/transparent"
+                    android:checked="false"
+                    android:fontFamily="@font/spartan_semi_bold"
+                    android:gravity="center"
+                    android:onClick="onRatingRadioButtonClicked"
+                    android:paddingHorizontal="5dp"
+                    android:paddingVertical="3dp"
+                    android:text="4.0 ★"
+                    android:textAllCaps="false"
+                    android:textColor="@color/gray_50"
+                    android:textSize="10sp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rating_star3_button_professional"
+                    android:layout_width="0dp"
+                    android:layout_height="26dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="0.5"
+                    android:autoSizeMinTextSize="1dp"
+                    android:background="@drawable/professional_rating_radio_button_selecter"
+                    android:button="@color/transparent"
+                    android:checked="false"
+                    android:fontFamily="@font/spartan_semi_bold"
+                    android:gravity="center"
+                    android:onClick="onRatingRadioButtonClicked"
+                    android:paddingHorizontal="5dp"
+                    android:paddingVertical="3dp"
+                    android:text="3.0 ★"
+                    android:textAllCaps="false"
+                    android:textColor="@color/gray_50"
+                    android:textSize="10sp"
+                    app:cornerRadius="14dp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rating_star2_button_professional"
+                    android:layout_width="0dp"
+                    android:layout_height="26dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="0.5"
+                    android:autoSizeMinTextSize="1dp"
+                    android:background="@drawable/professional_rating_radio_button_selecter"
+                    android:button="@color/transparent"
+                    android:checked="false"
+                    android:fontFamily="@font/spartan_semi_bold"
+                    android:gravity="center"
+                    android:onClick="onRatingRadioButtonClicked"
+                    android:paddingHorizontal="5dp"
+                    android:paddingVertical="3dp"
+                    android:text="2.0 ★"
+                    android:textAllCaps="false"
+                    android:textColor="@color/gray_50"
+                    android:textSize="10sp"
+                    app:cornerRadius="14dp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rating_star1_button_professional"
+                    android:layout_width="0dp"
+                    android:layout_height="26dp"
+                    android:layout_weight="0.5"
+                    android:autoSizeMinTextSize="1dp"
+                    android:background="@drawable/professional_rating_radio_button_selecter"
+                    android:button="@color/transparent"
+                    android:checked="false"
+                    android:fontFamily="@font/spartan_semi_bold"
+                    android:gravity="center"
+                    android:onClick="onRatingRadioButtonClicked"
+                    android:paddingHorizontal="5dp"
+                    android:paddingVertical="3dp"
+                    android:text="1.0 ★"
+                    android:textAllCaps="false"
+                    android:textColor="@color/gray_50"
+                    android:textSize="10sp"
+                    app:cornerRadius="14dp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="23dp"
+                android:layout_marginTop="23dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/spartan_medium"
+                android:letterSpacing="-0.03"
+                android:text="@string/professionals_list"
+                android:textColor="#3E3C47"
+                android:textSize="17sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_professional"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

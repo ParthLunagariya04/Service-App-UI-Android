@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_framelayout_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/back_profile_button"
+                android:layout_width="12dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4.31dp"
+                android:background="@drawable/back_image"
+                android:contentDescription="@string/todo1"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="14.5dp"
+                android:fontFamily="@font/spartan_bold"
+                android:letterSpacing="-0.03"
+                android:text="@string/profile1"
+                android:textColor="#3E3C47"
+                android:textSize="25sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="82dp"
+                android:layout_height="78.01dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:elevation="5dp"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image9" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/profile_update_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15.99dp"
+                android:fontFamily="@font/spartan_semi_bold"
+                android:letterSpacing="-0.02"
+                android:text="@string/update_profile_picture"
+                android:textColor="#6B36BC"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="41dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/spartan_medium"
+                android:text="@string/username"
+                android:textColor="#374151"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/userName_textView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="37dp"
+                android:autofillHints="no"
+                android:background="@drawable/rectangle1"
+                android:elevation="5dp"
+                android:fontFamily="@font/spartan_medium"
+                android:hint="@string/justin_martin"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="13dp"
+                android:textColorHint="#757575"
+                android:textSize="13sp"
+                tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="41dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/spartan_medium"
+                android:text="@string/password"
+                android:textColor="#374151"
+                android:textSize="14sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="37dp"
+                android:background="@drawable/rectangle1"
+                android:elevation="5dp"
+                app:hintEnabled="false"
+                app:boxBackgroundMode="filled"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:passwordToggleEnabled="true">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/password_textView"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/rectangle1"
+                    android:ems="15"
+                    android:fontFamily="@font/spartan_medium"
+                    android:hint="@string/password1"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingTop="7dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="41dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/spartan_medium"
+                android:text="@string/confirm_password"
+                android:textColor="#374151"
+                android:textSize="14sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="37dp"
+                android:background="@drawable/rectangle1"
+                android:elevation="5dp"
+                app:boxBackgroundMode="filled"
+                app:hintEnabled="false"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:passwordToggleEnabled="true">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/confirm_password_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/rectangle1"
+                    android:ems="15"
+                    android:paddingTop="7dp"
+                    android:fontFamily="@font/spartan_medium"
+                    android:hint="@string/password2"
+                    android:textColorHint="#696974"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textSize="13sp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="41dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/spartan_medium"
+                android:text="@string/mobile_number"
+                android:textColor="#374151"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/mobileNo_textView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="37dp"
+                android:background="@drawable/rectangle1"
+                android:elevation="5dp"
+                android:fontFamily="@font/spartan_medium"
+                android:hint="@string/_91_9999988888"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingStart="13dp"
+                android:textColorHint="#757575"
+                android:textSize="13sp"
+                tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="41dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/spartan_medium"
+                android:text="@string/address_line_1"
+                android:textColor="#374151"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/address_line1_textView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="37dp"
+                android:background="@drawable/rectangle1"
+                android:elevation="5dp"
+                android:fontFamily="@font/spartan_medium"
+                android:hint="@string/a_201_paradise_heights"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="13dp"
+                android:textColorHint="#757575"
+                android:textSize="13sp"
+                tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="41dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/spartan_medium"
+                android:text="@string/address_line_2"
+                android:textColor="#374151"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/address_line2_textView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="37dp"
+                android:background="@drawable/rectangle1"
+                android:elevation="5dp"
+                android:fontFamily="@font/spartan_medium"
+                android:hint="@string/gandhi_road_maland"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="13dp"
+                android:textColorHint="#757575"
+                android:textSize="13sp"
+                tools:ignore="RtlSymmetry,TouchTargetSizeCheck,TextContrastCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="41dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/spartan_medium"
+                android:text="@string/city"
+                android:textColor="#374151"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/city_textView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="37dp"
+                android:background="@drawable/rectangle1"
+                android:elevation="5dp"
+                android:fontFamily="@font/spartan_medium"
+                android:hint="@string/rajkot"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="13dp"
+                android:textColorHint="#696974"
+                android:textSize="13sp"
+                tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="41dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/spartan_medium"
+                android:text="@string/pincode"
+                android:textColor="#374151"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/pinCode_textView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="37dp"
+                android:background="@drawable/rectangle1"
+                android:elevation="5dp"
+                android:fontFamily="@font/spartan_medium"
+                android:hint="@string/_400023"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingStart="13dp"
+                android:textColorHint="#696974"
+                android:textSize="13sp"
+                tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="41dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/spartan_medium"
+                android:text="@string/state"
+                android:textColor="#374151"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/state_textView"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="37dp"
+                android:background="@drawable/rectangle1"
+                android:elevation="5dp"
+                android:fontFamily="@font/spartan_medium"
+                android:hint="@string/gujarat"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="13dp"
+                android:textColorHint="#696974"
+                android:textSize="13sp"
+                tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/edit_details_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:paddingVertical="14dp"
+                android:layout_marginTop="30dp"
+                android:textSize="18sp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="#6B36BC"
+                android:fontFamily="@font/spartan_semi_bold"
+                android:text="@string/edit_details"
+                android:textAllCaps="false"
+                android:letterSpacing="-0.01"
+                app:cornerRadius="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

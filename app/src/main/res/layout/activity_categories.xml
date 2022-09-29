@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CategoriesActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@color/pink"
+            android:orientation="horizontal"
+            android:padding="11dp">
+
+            <ImageButton
+                android:id="@+id/back_category_button"
+                android:layout_width="12dp"
+                android:layout_height="21dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/back_image_white"
+                android:contentDescription="@string/todo1"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+            <SearchView
+                android:id="@+id/search_view_category"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="17dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/rectangle1"
+                android:iconifiedByDefault="false"
+                android:queryHint="Search Category...."
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/category_name_textView_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/spartan_semi_bold"
+            android:letterSpacing="-0.03"
+            android:text="@string/categories_list"
+            android:textColor="#3E3C47"
+            android:textSize="17sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_categories"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

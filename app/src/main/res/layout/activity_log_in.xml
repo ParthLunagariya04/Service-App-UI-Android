@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6B36BC"
+    android:orientation="vertical"
+    tools:context=".LogIn">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_gravity="top"
+                android:scaleType="centerCrop"
+                android:src="@drawable/log_in" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginBottom="15dp"
+                app:cardCornerRadius="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginTop="28dp"
+                        android:fontFamily="@font/spartan_semi_bold"
+                        android:text="@string/welcome_back"
+                        android:textColor="@color/black"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/spartan_medium"
+                        android:text="@string/please_log_in_to_your_account" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginTop="23dp"
+                        android:backgroundTint="#80FFCEB9"
+                        android:elevation="0dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp">
+
+                        <!--<com.google.android.material.button.MaterialButtonToggleGroup
+                            android:id="@+id/toggle_button_group"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginHorizontal="5dp"
+                            app:singleSelection="true"
+                            android:gravity="center_horizontal">
+
+                            <Button
+                                android:id="@+id/user_button_logIn"
+                                style="?attr/materialButtonStyle"
+                                android:layout_width="0dp"
+                                android:layout_weight="0.5"
+                                android:layout_height="wrap_content"
+                                android:text="@string/user"
+                                app:cornerRadius="10dp"
+                                android:backgroundTint="@color/transparent"
+                                android:textAllCaps="false" />
+
+                            <Button
+                                android:id="@+id/professioner_button_logIn"
+                                style="?attr/materialButtonStyle"
+                                android:layout_width="0dp"
+                                android:layout_weight="0.5"
+                                android:layout_height="wrap_content"
+                                android:text="@string/professioner"
+                                app:cornerRadius="10dp"
+                                android:backgroundTint="@color/transparent"
+                                android:textColor="#898989"
+                                android:textAllCaps="false" />
+                        </com.google.android.material.button.MaterialButtonToggleGroup>-->
+
+                        <RadioGroup
+                            android:id="@+id/radio_button_group_lonIn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingVertical="2dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:id="@+id/user_radio_button_logIn"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/radio_button_left_selector"
+                                android:button="@color/transparent"
+                                android:checked="true"
+                                android:fontFamily="@font/spartan_semi_bold"
+                                android:gravity="center"
+                                android:letterSpacing="-0.01"
+                                android:onClick="onRadioButtonClicked"
+                                android:outlineSpotShadowColor="@color/transparent"
+                                android:text="@string/user"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                tools:ignore="TouchTargetSizeCheck"
+                                tools:targetApi="p" />
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:id="@+id/professional_radio_button_logIn"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/radio_button_left_selector"
+                                android:button="@color/transparent"
+                                android:checked="false"
+                                android:fontFamily="@font/spartan_semi_bold"
+                                android:gravity="center"
+                                android:letterSpacing="-0.01"
+                                android:onClick="onRadioButtonClicked"
+                                android:outlineSpotShadowColor="@color/transparent"
+                                android:text="@string/professional"
+                                android:textAllCaps="false"
+                                android:textColor="#716F6F"
+                                android:textSize="15sp"
+                                tools:ignore="TouchTargetSizeCheck"
+                                tools:targetApi="p" />
+
+                        </RadioGroup>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <EditText
+                        android:id="@+id/userName_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginTop="23dp"
+                        android:autofillHints="no"
+                        android:background="@drawable/rectangle1"
+                        android:elevation="5dp"
+                        android:fontFamily="@font/spartan_medium"
+                        android:hint="@string/enter_registered_mobile_no"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:paddingStart="13dp"
+                        android:textColorHint="#757575"
+                        android:textSize="15sp"
+                        tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginTop="23dp"
+                        android:background="@drawable/rectangle1"
+                        android:elevation="5dp"
+                        app:boxBackgroundMode="filled"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp"
+                        app:hintEnabled="false"
+                        app:passwordToggleEnabled="true">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/confirm_password_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:background="@drawable/rectangle1"
+                            android:ems="15"
+                            android:fontFamily="@font/spartan_medium"
+                            android:hint="@string/password2"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:paddingTop="10dp"
+                            android:textColorHint="#757575"
+                            android:textSize="15sp"
+                            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/forgot_password_textView_lonIn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/spartan_medium"
+                        android:text="Forgot Password?"
+                        android:textColor="#716F6F" />
+
+                    <Button
+                        android:id="@+id/logIn_button_logIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginTop="15dp"
+                        android:backgroundTint="@color/pink"
+                        android:fontFamily="@font/spartan_semi_bold"
+                        android:text="@string/log_in"
+                        android:textAllCaps="false"
+                        app:cornerRadius="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="25dp"
+                        android:layout_marginTop="23dp"
+                        android:layout_marginBottom="19dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/spartan_medium"
+                            android:autoSizeMinTextSize="5sp"
+                            android:text="@string/don_t_have_an_account" />
+
+                        <TextView
+                            android:id="@+id/register_textView_register"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/spartan_medium"
+                            android:autoSizeMinTextSize="5sp"
+                            android:text=" Register Now"
+                            android:textColor="#FF7030" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

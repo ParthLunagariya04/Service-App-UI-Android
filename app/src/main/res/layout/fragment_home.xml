@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/nav_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@color/pink"
+                android:padding="11dp">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rectangle1"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="Search..."
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="SpeakableTextPresentCheck">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/general_cards_viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:clipToPadding="false"
+                        android:contentDescription="@string/home"
+                        android:focusedByDefault="true"
+                        android:overScrollMode="never"
+
+                        android:scrollIndicators="bottom" />
+
+                    <me.relex.circleindicator.CircleIndicator
+                        android:id="@+id/circle_indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:backgroundTint="@color/pink"
+                        app:ci_drawable="@drawable/circle_indicator_selected"
+                        app:ci_drawable_unselected="@drawable/circle_indicator_unselected" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp">
+
+                        <TextView
+                            android:id="@+id/construction_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/spartan_semi_bold"
+                            android:text="Construction"
+                            android:textColor="@color/black"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/construction_viewAll_linearLayout_home"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/construction_viewAll_textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/spartan_regular"
+                                android:text="View all"
+                                android:textColor="@color/pink"
+                                android:textSize="19sp" />
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="6.5dp"
+                                android:src="@drawable/forward_image_pink" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/construction_cards_recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="5dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp">
+
+                        <TextView
+                            android:id="@+id/electric_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/spartan_semi_bold"
+                            android:maxLines="1"
+                            android:text="Electric &amp; Electronics Appliances"
+                            android:textColor="@color/black"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/electric_viewAll_linearLayout_home"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/electric_viewAll_textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/spartan_regular"
+                                android:gravity="end"
+                                android:text="View all"
+                                android:textColor="@color/pink"
+                                android:textSize="19dp" />
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="6.5dp"
+                                android:src="@drawable/forward_image_pink" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/electric_cards_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp">
+
+                        <TextView
+                            android:id="@+id/driver_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/spartan_semi_bold"
+                            android:text="Driver"
+                            android:textColor="@color/black"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:id="@+id/driver_viewAll_linearLayout_home"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/driver_viewAll_textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/spartan_regular"
+                                android:gravity="end"
+                                android:text="View all"
+                                android:textColor="@color/pink"
+                                android:textSize="19dp" />
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="6.5dp"
+                                android:src="@drawable/forward_image_pink" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/driver_cards_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="5dp" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>

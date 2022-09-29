@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OtpActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/back_button_otp"
+                android:layout_width="12dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="13.31dp"
+                android:background="@drawable/back_image"
+                android:contentDescription="@string/todo1"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:layout_marginTop="7.5dp"
+                android:src="@drawable/otp_image"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/spartan_semi_bold"
+                android:text="@string/otp_verification"
+                android:textColor="#363245"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/number_textView_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="23dp"
+                android:fontFamily="@font/spartan_regular"
+                android:text="@string/enter_the_otp_sent_to_91_9768427098"
+                android:textColor="#757575" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.chaos.view.PinView
+                    android:id="@+id/otpview_otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:fontFamily="@font/spartan_medium"
+                    android:hint="@string/_1235"
+                    android:inputType="text"
+                    android:itemBackground="@drawable/otp_view_backfround"
+                    app:itemCount="6"
+                    app:itemSpacing="10dp"
+                    app:lineColor="@color/transparent"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/resend_otp_textView_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="38dp"
+                android:fontFamily="@font/spartan_medium"
+                android:text="Didn’t receive the OTP? Resend OTP"
+                android:textColor="#8E8E8E" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

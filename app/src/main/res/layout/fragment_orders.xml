@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.OrdersFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25.81dp"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <ImageButton
+                android:id="@+id/back_orders_button"
+                android:layout_width="12dp"
+                android:layout_height="21dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/back_image"
+                android:contentDescription="@string/todo1"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:text="@string/your_orders"
+                android:textColor="#3E3C47"
+                android:fontFamily="@font/spartan_medium"
+                android:letterSpacing="-0.03"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/order_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+</FrameLayout>
