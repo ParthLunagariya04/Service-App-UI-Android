@@ -4,18 +4,18 @@
 ![WhatsApp Image 2022-09-29 at 11 51 34 AM](https://user-images.githubusercontent.com/72681916/192955362-bc5e8a7b-d7e2-4eca-b84c-e807ee06610c.jpeg)
 
 ### This is Android Design App design by Parth Lunagariya
-# Flexible and User friendly UI
-# Animated Splash Screen
-Enchanting Sign in and Sign up Screen
-Automatic swipe viewpager with beautiful dots indicator
-Flexible recyclerview
-Items search enabled
-Bottom navigationbar with different icon
-Animation in recycler view
-Beautiful cards design
-customized radio buttons
-customized rating bar
-Password hide and show option
-Customized beautiful dialog box
-User friendly app color
-And there are many more functionality in this app.
+### Flexible and User friendly UI
+### Animated Splash Screen
+### Enchanting Sign in and Sign up Screen
+### Automatic swipe viewpager with beautiful dots indicator
+### Flexible recyclerview
+### Items search enabled
+### Bottom navigationbar with different icon
+### Animation in recycler view
+### Beautiful cards design
+### Customized radio buttons
+### Customized rating bar
+### Password hide and show option
+### Customized beautiful dialog box
+### User friendly app color
+### And there are many more functionality in this app.
