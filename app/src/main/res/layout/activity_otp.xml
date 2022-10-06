@@ -66,9 +66,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
+                    android:cursorVisible="true"
                     android:fontFamily="@font/spartan_medium"
-                    android:hint="@string/_1235"
-                    android:inputType="text"
+                    android:inputType="number"
                     android:itemBackground="@drawable/otp_view_backfround"
                     app:itemCount="6"
                     app:itemSpacing="10dp"
@@ -77,16 +77,46 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/resend_otp_textView_otp"
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/verify_button_otp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="100dp"
-                android:layout_marginBottom="38dp"
-                android:fontFamily="@font/spartan_medium"
-                android:text="Didn’t receive the OTP? Resend OTP"
-                android:textColor="#8E8E8E" />
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/pink"
+                android:fontFamily="@font/spartan_semi_bold"
+                android:paddingVertical="10dp"
+                android:text="Verify"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                app:cornerRadius="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="30dp"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/spartan_medium"
+                    android:text="Didn’t receive the OTP?"
+                    android:textColor="#8E8E8E" />
+
+                <TextView
+                    android:id="@+id/resend_otp_textView_otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="40dp"
+                    android:fontFamily="@font/spartan_medium"
+                    android:text=" Resend OTP"
+                    android:textColor="#8E8E8E" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

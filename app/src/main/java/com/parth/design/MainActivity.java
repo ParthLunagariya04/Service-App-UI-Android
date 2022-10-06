@@ -31,11 +31,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        //getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        //getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        //getWindow().setStatusBarColor(Color.WHITE);
-
         // BOTTOM NAVIGATION VIEW
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -43,12 +38,6 @@ public class MainActivity extends AppCompatActivity {
         int menuItemId = bottomNavigationView.getMenu().getItem(3).getItemId();
         BadgeDrawable badge = bottomNavigationView.getOrCreateBadge(menuItemId);
         badge.setNumber(2);
-
-        //swipe using fragments
-        /*viewPager = findViewById(R.id.fragment_viewPager);
-        SimpleFragmentPagerAdapter adapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(adapter);*/
-
 
         // default home fragment
         loadFragment(new HomeFragment());

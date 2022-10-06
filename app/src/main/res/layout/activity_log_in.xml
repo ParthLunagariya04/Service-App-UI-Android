@@ -10,17 +10,20 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
                 android:layout_gravity="top"
+                android:contentDescription="@string/todo11"
                 android:scaleType="centerCrop"
                 android:src="@drawable/log_in" />
 
@@ -28,8 +31,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="-150dp"
                 android:layout_marginBottom="15dp"
-                app:cardCornerRadius="24dp">
+                app:cardCornerRadius="24dp"
+                app:cardElevation="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -64,47 +69,14 @@
                         app:cardCornerRadius="8dp"
                         app:cardElevation="0dp">
 
-                        <!--<com.google.android.material.button.MaterialButtonToggleGroup
-                            android:id="@+id/toggle_button_group"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginHorizontal="5dp"
-                            app:singleSelection="true"
-                            android:gravity="center_horizontal">
-
-                            <Button
-                                android:id="@+id/user_button_logIn"
-                                style="?attr/materialButtonStyle"
-                                android:layout_width="0dp"
-                                android:layout_weight="0.5"
-                                android:layout_height="wrap_content"
-                                android:text="@string/user"
-                                app:cornerRadius="10dp"
-                                android:backgroundTint="@color/transparent"
-                                android:textAllCaps="false" />
-
-                            <Button
-                                android:id="@+id/professioner_button_logIn"
-                                style="?attr/materialButtonStyle"
-                                android:layout_width="0dp"
-                                android:layout_weight="0.5"
-                                android:layout_height="wrap_content"
-                                android:text="@string/professioner"
-                                app:cornerRadius="10dp"
-                                android:backgroundTint="@color/transparent"
-                                android:textColor="#898989"
-                                android:textAllCaps="false" />
-                        </com.google.android.material.button.MaterialButtonToggleGroup>-->
-
                         <RadioGroup
                             android:id="@+id/radio_button_group_lonIn"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:paddingVertical="2dp"
                             android:layout_marginHorizontal="2dp"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:paddingVertical="2dp">
 
                             <androidx.appcompat.widget.AppCompatRadioButton
                                 android:id="@+id/user_radio_button_logIn"
@@ -151,7 +123,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <EditText
-                        android:id="@+id/userName_textView"
+                        android:id="@+id/mobile_logIn"
                         android:layout_width="match_parent"
                         android:layout_height="52dp"
                         android:layout_marginHorizontal="25dp"
@@ -162,6 +134,7 @@
                         android:fontFamily="@font/spartan_medium"
                         android:hint="@string/enter_registered_mobile_no"
                         android:inputType="number"
+                        android:maxLength="10"
                         android:maxLines="1"
                         android:paddingStart="13dp"
                         android:textColorHint="#757575"
@@ -182,7 +155,7 @@
                         app:passwordToggleEnabled="true">
 
                         <androidx.appcompat.widget.AppCompatEditText
-                            android:id="@+id/confirm_password_textView"
+                            android:id="@+id/password_login"
                             android:layout_width="match_parent"
                             android:layout_height="52dp"
                             android:background="@drawable/rectangle1"
@@ -233,8 +206,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:fontFamily="@font/spartan_medium"
                             android:autoSizeMinTextSize="5sp"
+                            android:fontFamily="@font/spartan_medium"
                             android:text="@string/don_t_have_an_account" />
 
                         <TextView
@@ -242,8 +215,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:fontFamily="@font/spartan_medium"
                             android:autoSizeMinTextSize="5sp"
+                            android:fontFamily="@font/spartan_medium"
                             android:text=" Register Now"
                             android:textColor="#FF7030" />
 

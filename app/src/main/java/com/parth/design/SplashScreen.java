@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
@@ -26,9 +27,17 @@ public class SplashScreen extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this, LogIn.class);
-                startActivity(intent);
-                finish();
+                SharedPreferences preferences = getSharedPreferences(RegisterActivity.PREF_NAME, 0);
+                boolean hasRegistered = preferences.getBoolean("hasRegistered", false);
+                boolean hasLoggedIn = preferences.getBoolean("hasLoggedIn", false);
+
+                if (hasRegistered || hasLoggedIn){
+                    startActivity(new Intent(SplashScreen.this, MainActivity.class));
+                    finish();
+                }else {
+                    startActivity(new Intent(SplashScreen.this, LogIn.class));
+                    finish();
+                }
             }
         }, 3000);
     }
