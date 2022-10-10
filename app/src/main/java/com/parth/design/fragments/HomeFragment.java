@@ -3,6 +3,8 @@ package com.parth.design.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,14 +16,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parth.design.CategoriesActivity;
 import com.parth.design.R;
 import com.parth.design.adapter.ConstructionCardsAdaptor;
 import com.parth.design.adapter.GeneralCardViewPager;
+import com.parth.design.apiController.ApiController;
 import com.parth.design.model.ConstructionCardsModel;
+import com.parth.design.model.RetrofitModelWithList;
+import com.parth.design.model.RetrofitModel;
+import com.parth.design.model.RetrofitModelWithList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +35,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import me.relex.circleindicator.CircleIndicator;
-import me.relex.circleindicator.CircleIndicator3;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
     final long DELAY_MS = 400;
@@ -50,41 +58,14 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        //viewPager
-        try {
-            circleIndicator = view.findViewById(R.id.circle_indicator);
-            viewPager = view.findViewById(R.id.general_cards_viewpager);
-            generalCardViewPager = new GeneralCardViewPager(getContext());
-            viewPager.setAdapter(generalCardViewPager);
-            viewPager.setPadding(40,40,150,40);
-            viewPager.setPageMargin(50);
-            circleIndicator.setViewPager(viewPager);
+        circleIndicator = view.findViewById(R.id.circle_indicator);
+        viewPager = view.findViewById(R.id.general_cards_viewpager);
 
-            final Handler handler = new Handler();
-            final Runnable Update = new Runnable() {
-                @Override
-                public void run() {
-                    if (currentPage == generalCardViewPager.getCount()) {
-                        currentPage = 0;
-                    }
-                    viewPager.setCurrentItem(currentPage++, true);
-                }
-            };
-            timer = new Timer();
-            timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    handler.post(Update);
-                }
-            }, DELAY_MS, PERIOD_MS);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.d("parth", " MY ERRORS " + e);
-        }
+        headerList();
 
         //construction, electric, driver Text views data passing to Category Activity
         constructionTextView = view.findViewById(R.id.construction_textView);
@@ -121,8 +102,6 @@ public class HomeFragment extends Fragment {
         ConstructionCardsAdaptor electricCardsAdaptor = new ConstructionCardsAdaptor(electricCardList);
         electricCardRecyclerView.setAdapter(electricCardsAdaptor);
 
-        /*electricTextView = findViewById(R.id.electric_textView);
-        electricTextView.setText("Electric & Electronics Appliances");*/
 
         // driver Recyclerview
         driverCardRecyclerView = view.findViewById(R.id.driver_cards_recyclerview);
@@ -138,7 +117,6 @@ public class HomeFragment extends Fragment {
 
         ConstructionCardsAdaptor driverCardAdapter = new ConstructionCardsAdaptor(driverCardsList);
         driverCardRecyclerView.setAdapter(driverCardAdapter);
-
 
         cl = view.findViewById(R.id.construction_viewAll_linearLayout_home);
         el = view.findViewById(R.id.electric_viewAll_linearLayout_home);
@@ -173,5 +151,60 @@ public class HomeFragment extends Fragment {
         });
 
         return view;
+    }
+
+    //list header View pager automatic swipe
+    private void headerList() {
+        //api calling
+        try {
+            Call<RetrofitModelWithList> call = ApiController.getInstance().getRetrofit().getViewPagerData("0");
+            call.enqueue(new Callback<RetrofitModelWithList>() {
+                @Override
+                public void onResponse(@NonNull Call<RetrofitModelWithList> call, @NonNull Response<RetrofitModelWithList> response) {
+
+                    if (response.isSuccessful()) {
+                        //viewPager
+                        generalCardViewPager = new GeneralCardViewPager(getContext(), response.body());
+                        viewPager.setAdapter(generalCardViewPager);
+                        viewPager.setPadding(40, 40, 150, 40);
+                        viewPager.setPageMargin(50);
+                        circleIndicator.setViewPager(viewPager);
+
+                        //automatic change view pager
+                        final Handler handler = new Handler();
+                        final Runnable Update = new Runnable() {
+                            @Override
+                            public void run() {
+                                if (currentPage == generalCardViewPager.getCount()) {
+                                    currentPage = 0;
+                                }
+                                viewPager.setCurrentItem(currentPage++, true);
+                            }
+                        };
+                        timer = new Timer();
+                        timer.schedule(new TimerTask() {
+                            @Override
+                            public void run() {
+                                handler.post(Update);
+                            }
+                        }, DELAY_MS, PERIOD_MS);
+
+                    } else {
+                        Log.d("MyLogData", "no image - " + response.message());
+                        Toast.makeText(getContext(), response.message(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<RetrofitModelWithList> call, Throwable t) {
+                    Log.d("MyLogData", "error - " + t.getMessage());
+                    Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d("parth", " MY ERRORS " + e);
+        }
     }
 }

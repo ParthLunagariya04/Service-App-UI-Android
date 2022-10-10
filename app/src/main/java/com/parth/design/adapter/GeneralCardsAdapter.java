@@ -29,7 +29,7 @@ public class GeneralCardsAdapter extends RecyclerView.Adapter<GeneralCardsAdapte
 
     @Override
     public void onBindViewHolder(@NonNull GeneralCardsViewHolder holder, int position) {
-        holder.imageView.setImageResource(generalCardsList.get(position).getImage());
+        //holder.imageView.setImageResource(generalCardsList.get(position).getImage());
 
     }
 

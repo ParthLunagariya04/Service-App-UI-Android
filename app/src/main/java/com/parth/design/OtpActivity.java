@@ -2,6 +2,7 @@ package com.parth.design;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,8 +23,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.parth.design.apiController.ApiController;
+import com.parth.design.model.RetrofitModel;
 
 import java.util.concurrent.TimeUnit;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class OtpActivity extends AppCompatActivity {
     ImageButton backButton;
@@ -31,7 +38,6 @@ public class OtpActivity extends AppCompatActivity {
     String verificationId;
     PinView pinView;
     Button verifyButton;
-    TextView resentOtp;
 
     private FirebaseAuth mAuth;
     private final PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks =
@@ -50,7 +56,7 @@ public class OtpActivity extends AppCompatActivity {
                     String code = phoneAuthCredential.getSmsCode();
                     if (code != null) {
                         pinView.setText(code);
-                        Log.d("MY_OTP", "code" + code);
+                        Log.d("MY_OTP", "code - " + code);
                         verifyCode(code);
                     }
                 }
@@ -63,7 +69,7 @@ public class OtpActivity extends AppCompatActivity {
                 @Override
                 public void onVerificationFailed(@NonNull FirebaseException e) {
                     Toast.makeText(OtpActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
-                    Log.d("MY_OTP ", "codeBySystem" + e.getMessage());
+                    Log.d("MY_OTP ", "codeBySystem - " + e.getMessage());
                 }
             };
 
@@ -73,17 +79,19 @@ public class OtpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp);
 
-        mAuth = FirebaseAuth.getInstance();
         getWindow().setStatusBarColor(Color.WHITE);
-        number = getIntent().getStringExtra("MoNumber");
-        name = getIntent().getStringExtra("");
-        password = getIntent().getStringExtra("");
-        confirmPsw = getIntent().getStringExtra("");
-        address1 = getIntent().getStringExtra("");
-        address2 = getIntent().getStringExtra("");
-        pincode = getIntent().getStringExtra("");
 
-        sendVerificationCodeToUser("+91"+number);
+        mAuth = FirebaseAuth.getInstance();
+
+        number = getIntent().getStringExtra("MoNumber");
+        name = getIntent().getStringExtra("userName");
+        password = getIntent().getStringExtra("password");
+        confirmPsw = getIntent().getStringExtra("confirmPassword");
+        address1 = getIntent().getStringExtra("address1");
+        address2 = getIntent().getStringExtra("address2");
+        pincode = getIntent().getStringExtra("pincode");
+
+        sendVerificationCodeToUser("+91" + number);
 
         backButton = findViewById(R.id.back_button_otp);
         pinView = findViewById(R.id.otpview_otp);
@@ -111,7 +119,7 @@ public class OtpActivity extends AppCompatActivity {
     private void verifyCode(String code) {
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
         signInWithPhoneAuthCredential(credential);
-        startActivity(new Intent(OtpActivity.this, MainActivity.class));
+        //startActivity(new Intent(OtpActivity.this, MainActivity.class));
 
         Log.d("MY_OTP", "credential" + credential);
     }
@@ -133,7 +141,41 @@ public class OtpActivity extends AppCompatActivity {
 
     // register api call
     private void registerApiCall() {
+        Call<RetrofitModel> call = ApiController.getInstance().getRetrofit()
+                .userData(name, "", number, address1, "", "", password,
+                        confirmPsw, "", "2", address2, "", "dggdhgtd66355", pincode);
 
+        Log.d("MyAPI", "My Names fields - " + name + " number- " + number + " add1- " + address1
+                + " add2- " + address2 + " psw- " + password + " cpsw- " + confirmPsw + " pin- " + pincode);
+
+        call.enqueue(new Callback<RetrofitModel>() {
+            @Override
+            public void onResponse(@NonNull Call<RetrofitModel> call, @NonNull Response<RetrofitModel> response) {
+                assert response.body() != null;
+                if (response.body().getResult()) {
+                    String userToken = response.body().getAccess_token();
+
+                    SharedPreferences preferences = getSharedPreferences(RegisterActivity.PREF_NAME, 0);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putBoolean("hasRegistered", true);
+                    editor.putString("user_token", userToken);
+                    editor.apply();
+
+                    startActivity(new Intent(OtpActivity.this, MainActivity.class));
+                    Toast.makeText(OtpActivity.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
+                    finish();
+
+                } else {
+                    Toast.makeText(OtpActivity.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<RetrofitModel> call, @NonNull Throwable t) {
+                Toast.makeText(OtpActivity.this, t.toString(), Toast.LENGTH_LONG).show();
+                Log.d("MyAPI", "MY ERROR - " + t.getMessage());
+            }
+        });
     }
 
     //verify button

@@ -88,11 +88,13 @@ public class LogIn extends AppCompatActivity {
                     public void onResponse(@NonNull Call<RetrofitModel> call, @NonNull Response<RetrofitModel> response) {
                         assert response.body() != null;
                         if (response.body().getResult()){
+                            String accessToken = response.body().getAccess_token();
+
                             SharedPreferences preferences = getSharedPreferences(RegisterActivity.PREF_NAME, 0);
                             SharedPreferences.Editor editor =preferences.edit();
                             editor.putBoolean("hasLoggedIn", true);
-                            //editor.putString("", response.body().getResult().toString());
-                            Log.d("MyLogData", "MY tokan - " + response.body().getAccess_token() + "    "  + response.body().getMessage() + "  " + response.body().getResult());
+                            editor.putString("user_token", accessToken);
+                            //Log.d("MyLogData", "MY tokan - " + response.body().getAccess_token() + "    "  + response.body().getMessage() + "  " + response.body().getResult());
                             editor.apply();
 
                             startActivity(new Intent(LogIn.this, MainActivity.class));

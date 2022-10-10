@@ -1,6 +1,8 @@
 package com.parth.design.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,23 +11,25 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.widget.ViewPager2;
 
+import com.bumptech.glide.Glide;
 import com.parth.design.R;
+import com.parth.design.model.RetrofitModelWithList;
 
 public class GeneralCardViewPager extends PagerAdapter {
 
-    private Context context;
+    private final Context context;
+    RetrofitModelWithList list;
     private LayoutInflater layoutInflater;
-    private Integer[] images = {R.drawable.image3, R.drawable.image1, R.drawable.image2, R.drawable.image4};
 
-    public GeneralCardViewPager(Context context) {
+    public GeneralCardViewPager(Context context, RetrofitModelWithList list) {
         this.context = context;
+        this.list = list;
     }
 
     @Override
     public int getCount() {
-        return images.length;
+        return list.getdata().size();
     }
 
     @Override
@@ -39,9 +43,10 @@ public class GeneralCardViewPager extends PagerAdapter {
         layoutInflater = (LayoutInflater) context.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE
         );
+        @SuppressLint("InflateParams")
         View view = layoutInflater.inflate(R.layout.general_cards_view, null);
         ImageView imageView = view.findViewById(R.id.general_card_imageview);
-        imageView.setImageResource(images[position]);
+        Glide.with(context).load("http://143.110.246.84/arbab/" + list.getdata().get(position).getImage()).into(imageView);
         ViewPager viewPager = (ViewPager) container;
         viewPager.addView(view, 0);
         return view;

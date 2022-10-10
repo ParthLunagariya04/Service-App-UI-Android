@@ -196,24 +196,27 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/country_code_editText_register"
+                    <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="52dp"
-                        android:layout_marginStart="25dp"
                         android:layout_marginTop="19dp"
-                        android:layout_marginBottom="5dp"
-                        android:autofillHints="no"
-                        android:background="@drawable/rectangle1"
-                        android:elevation="5dp"
-                        android:fontFamily="@font/spartan_medium"
-                        android:hint="+91 ^"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:paddingHorizontal="10dp"
-                        android:textColorHint="#757575"
-                        android:textSize="13sp"
-                        tools:ignore="RtlSymmetry,TouchTargetSizeCheck" />
+                        android:layout_marginStart="25dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="5dp">
+
+                        <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                            android:id="@+id/country_code_picker"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="phone"
+                            android:gravity="center"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_gravity="center"
+                            app:ccp_textSize="13sp"
+                            app:ccp_hideNameCode="true"
+                            android:inputType="phone"/>
+
+                    </androidx.cardview.widget.CardView>
 
                     <EditText
                         android:id="@+id/mobileNo_editText_register"
@@ -228,7 +231,7 @@
                         android:elevation="5dp"
                         android:fontFamily="@font/spartan_medium"
                         android:hint="Mobile Number *"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:maxLength="10"
                         android:maxLines="1"
                         android:paddingStart="13dp"

@@ -57,5 +57,8 @@ dependencies {
     implementation 'com.github.dhaval2404:imagepicker:2.1'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.github.joielechong:countrycodepicker:2.4.2'
+    implementation 'com.github.bumptech.glide:glide:4.14.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.1'
     //implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.0'
 }
